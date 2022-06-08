@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import GenInfo from "./components/GenInfo";
+import Profile from "./components/Profile";
 // import "./style.css"
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
 render() {
     return (
       <div>
-        <GenInfo title="asadsdasd"/>
+        <Profile title="asadsdasd"/>
       </div>
     );
   }
