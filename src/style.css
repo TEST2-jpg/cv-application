@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=PT+Sans:wght@700&family=Public+Sans:wght@700&family=Raleway:wght@300&family=Source+Sans+Pro:wght@700&display=swap');
+
+/* * {
+    border: 1px solid red;
+} */
+
+.main {
+    display: flex;
+    width: 1120px;
+    margin: 100px;
+}
+
+.profile {
+    display: flex;
+    padding: 40px;
+    width: 430px;
+    flex-direction: column;
+    background-color: #F4F4F4;
+}
+
+.name {
+    font-family: 'Public Sans';
+    font-size: 26px;
+    padding: 10px 0px;
+    color: #444440;
+}
+
+.title {
+    font-family: 'Raleway';
+    font-size: 15.5px;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+.location, .email, .website {
+    font-size: 12px;
+    font-family: 'Nunito Sans';
+    padding: 5px;
+}
+
+.profileTitle {
+    font-family: 'Source Sans Pro';
+    font-size: 17px;
+    letter-spacing: 4px;
+    color: #444440;
+    padding: 40px 0px 10px 0px;
+
+}
+
+.work {
+    width: 1000px;
+}
+
