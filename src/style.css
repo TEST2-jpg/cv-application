@@ -10,12 +10,31 @@
     margin: 100px;
 }
 
+.edit {
+    width: 20px;
+    height: 20px;
+}
+
+button {
+    margin-left: 50px;
+    outline: none;
+}
 .profile {
     display: flex;
     padding: 40px;
-    width: 430px;
+    padding-left: 60px;
+    padding-top: 15px;
+    width: 310px;
     flex-direction: column;
     background-color: #F4F4F4;
+}
+
+.userImg {
+    border-radius: 50%;
+    padding: 30px;
+    height: 210px;
+    width: 210px;
+    border: 10px solid rgb(243, 243, 243);
 }
 
 .name {
@@ -23,6 +42,7 @@
     font-size: 26px;
     padding: 10px 0px;
     color: #444440;
+    margin-left: 30px;
 }
 
 .title {
@@ -30,12 +50,17 @@
     font-size: 15.5px;
     margin-bottom: 50px;
     letter-spacing: 2px;
+    margin-left: 30px;
+
 }
 
 .location, .email, .website {
     font-size: 12px;
     font-family: 'Nunito Sans';
     padding: 5px;
+    margin-left: 30px;
+    color: #444440;
+
 }
 
 .profileTitle {
@@ -44,10 +69,20 @@
     letter-spacing: 4px;
     color: #444440;
     padding: 40px 0px 10px 0px;
+    margin-left: 30px;
+
+
+}
+
+.profileInfo {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 13.5px;
+    margin-left: 30px;
 
 }
 
 .work {
     width: 1000px;
 }
+
 
