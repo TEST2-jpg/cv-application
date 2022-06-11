@@ -5,6 +5,7 @@ class Experienceforms extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      expHidden: false,
       input: {
         company: '',
         title: '',
@@ -36,6 +37,12 @@ class Experienceforms extends Component {
     this.handleCompany = this.handleCompany.bind(this);
     this.handleDate = this.handleDate.bind(this);
     this.handleTasks = this.handleTasks.bind(this);
+    this.expShowBtn = this.expShowBtn.bind(this);
+
+  }
+  expShowBtn() {
+    this.setState({ expHidden: !this.state.expHidden })
+    console.log(12)
   }
   handleTitle(event) {
     this.setState({
@@ -82,12 +89,9 @@ class Experienceforms extends Component {
         tasks: ''
       }
     })
-    console.log(this.state.jobs)
-
   }
   showForm() {
     this.setState({ showForm: !this.state.showForm })
-    console.log(this.state.showForm, 'monkey')
   }
 
   render() {
@@ -98,6 +102,7 @@ class Experienceforms extends Component {
           {this.state.showForm && (
             <div className='forms'>
               <form className='profileForm' onSubmit={this.handleSubmit}>
+                <span className='xbtn'><button type='button' onClick={this.showForm}><img className='ximg' /></button></span>
                 <label htmlFor="company">Company</label>
                 <input type="text" name="company" value={this.state.input.company || ''} onChange={this.handleCompany} placeholder="Enter company" id="company"></input>
                 <label htmlFor="title">Title</label>
@@ -111,8 +116,9 @@ class Experienceforms extends Component {
             </div>
           )}
         </div>
-        <span>{this.props.show ? <button className='expBtn' onClick={this.showForm}>EIJFIOWEF</button> : null}</span>
-        <Experience data={jobs} />
+        <div onMouseEnter={this.expShowBtn} onMouseLeave={this.expShowBtn} >
+          <Experience data={jobs} btn={<span>{this.state.expHidden ? <button className='btnskl' onClick={this.showForm}><img className='edit' src="https://www.svgrepo.com/show/46991/edit.svg" alt='edit profile'></img></button> : null}</span>}></Experience>
+        </div>
       </div>
     );
   }
