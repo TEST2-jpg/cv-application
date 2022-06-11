@@ -11,22 +11,28 @@
 }
 
 .edit {
-    width: 20px;
-    height: 20px;
+    width: 13px;
+    height: 13px;
 }
 
-button {
-    margin-left: 50px;
+div {
+    word-wrap: break-word;
+}
+
+.profileBtn {
+    margin-left: 20px;
     outline: none;
 }
+
 .profile {
     display: flex;
     padding: 40px;
-    padding-left: 60px;
+    padding-left: 50px;
     padding-top: 15px;
-    width: 310px;
+    width: 270px;
     flex-direction: column;
     background-color: #F4F4F4;
+    height: 93%;
 }
 
 .userImg {
@@ -54,7 +60,9 @@ button {
 
 }
 
-.location, .email, .website {
+.location,
+.email,
+.website {
     font-size: 12px;
     font-family: 'Nunito Sans';
     padding: 5px;
@@ -70,8 +78,6 @@ button {
     color: #444440;
     padding: 40px 0px 10px 0px;
     margin-left: 30px;
-
-
 }
 
 .profileInfo {
@@ -85,4 +91,116 @@ button {
     width: 1000px;
 }
 
+.forms {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    height: 100px;
+    width: 400px;
+}
 
+.profileForm {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 30px 60px 30px;
+    font-family: 'Source Sans Pro';
+    border: 0.5px solid rgb(209, 201, 201);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: #F4F4F4;
+
+}
+
+label {
+    font-size: 16px;
+    padding: 15px;
+}
+
+input {
+    height: 40px;
+    width: 90%;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 30px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border: 1px solid whitesmoke;
+}
+
+.submit {
+    outline: none;
+    border: none;
+    margin-top: 50px;
+    font-size: 15px;
+    padding: 6px 14px;
+    font-family: 'Source Sans Pro';
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;}
+
+.work {
+    background-color: rgb(227, 233, 233);
+    width: 435px;
+    padding: 60px;
+}
+
+.expBtn {
+    position: absolute;
+    bottom: 100px;
+}
+
+.exptitle {
+    font-family: 'Public Sans';
+    font-size: 21px;
+    color:#444440;
+    letter-spacing: 2.8px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+.exp {
+    display: flex;
+    flex-direction: column;
+}
+
+.line--exp {
+    width: 200px;
+    margin: 0px;
+    margin-bottom: 50px;
+}
+
+.title--exp {
+    font-family: 'Raleway';
+    font-size: 16px;
+    padding: 16px 0px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.comp--exp {
+    font-size: 20px;
+    font-family: 'PT sans';
+    font-style: italic;
+    letter-spacing: 2px;
+    color: #737373;
+}
+
+.date--exp {
+    font-size: 14px;
+    font-family:'Courier New', Courier, monospace;
+    margin-left: 50px;
+}
+
+.spaced {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tasks--exp {
+    margin: 20px 0px;
+    font-size: 15px;
+    padding-left: 13px;
+    margin-bottom: 50px;
+    font-family: 'Nunito Sans';
+
+}
