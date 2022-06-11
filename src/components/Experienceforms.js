@@ -38,11 +38,11 @@ class Experienceforms extends Component {
     this.handleDate = this.handleDate.bind(this);
     this.handleTasks = this.handleTasks.bind(this);
     this.expShowBtn = this.expShowBtn.bind(this);
+    this.removeLast = this.removeLast.bind(this);
 
   }
   expShowBtn() {
     this.setState({ expHidden: !this.state.expHidden })
-    console.log(12)
   }
   handleTitle(event) {
     this.setState({
@@ -90,8 +90,21 @@ class Experienceforms extends Component {
       }
     })
   }
+
   showForm() {
     this.setState({ showForm: !this.state.showForm })
+  }
+
+  removeLast() {
+    this.setState({
+      jobs: this.state.jobs.slice(0,-1),
+      input: {
+        company: '',
+        title: '',
+        date: '',
+        tasks: ''
+      }
+    })
   }
 
   render() {
@@ -111,7 +124,7 @@ class Experienceforms extends Component {
                 <input type="text" name="date" value={this.state.input.date || ''} onChange={this.handleDate} placeholder="Enter job date duration" id="date"></input>
                 <label htmlFor="email">Tasks</label>
                 <input type="text" name="tasks" value={this.state.input.tasks || ''} onChange={this.handleTasks} placeholder="Enter job description" id="tasks"></input>
-                <button className='submit'>Submit</button>
+                <button className='submit'>Submit</button> <span><button type='button' className='submit' onClick={this.removeLast}>Remove prev</button></span>
               </form>
             </div>
           )}
