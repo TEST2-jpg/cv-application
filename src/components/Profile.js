@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Skillsforms from './Skillsforms';
 
 class Profile extends Component {
   constructor(props) {
@@ -13,11 +14,17 @@ class Profile extends Component {
       photoURL: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
       showForm: false,
       submitt: false,
+      profileBtn: false,
     }
     this.showForm = this.showForm.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.showProfBtn = this.showProfBtn.bind(this);
 
+
+  }
+  showProfBtn() {
+    this.setState({ profileBtn: !this.state.profileBtn })
   }
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value })
@@ -25,22 +32,22 @@ class Profile extends Component {
   handleSubmit(event) {
     event.preventDefault()
     this.setState({ submitt: !this.state.submitt })
-    console.log(event.target.location.value)
   }
   showForm() {
     this.setState({ showForm: !this.state.showForm })
-    console.log(this.state.showForm, 'monkey')
-  }
 
+  }
   render() {
     let btnImg = <img className='edit' src="https://www.svgrepo.com/show/46991/edit.svg" alt='edit profile'></img>
-    const { name, title, location, email, profileInfo, website, photoURL } = this.state;
+    const { name, title, location, email, profileInfo, website, photoURL, profileBtn } = this.state;
+    const xButton = profileBtn ? <button className='profileBtn' onClick={this.showForm}>{btnImg}</button> : null
     return (
       <div className='profile'>
         <div>
-          {this.state.showForm && (
+          {(this.state.showForm) && (
             <div className='forms'>
               <form className='profileForm' onSubmit={this.handleSubmit}>
+                <span className='xbtn'><button type='button' onClick={this.showForm}><img className='ximg'/></button></span>
                 <label htmlFor="name">Name</label>
                 <input type="text" name="name" value={name} onChange={this.handleChange} placeholder="Enter your full name" id="name"></input>
                 <label htmlFor="title">Title</label>
@@ -59,14 +66,18 @@ class Profile extends Component {
           )}
         </div>
         {/* <h1>{this.props.title}</h1> */}
-        <img src={photoURL} alt='UserPhoto' className='userImg'></img>
-        <div className='name'>{name}<span>{this.props.show ? <button className='profileBtn' onClick={this.showForm}>{btnImg}</button> : null}</span></div>
-        <div className='title'>{title}</div>
-        <div className='location'>{location}</div>
-        <div className='email'>{email}</div>
-        <div className='website'>{website}</div>
-        <div className='profileTitle'>PROFILE</div>
-        <div className='profileInfo'>{profileInfo}</div>
+        <div onMouseEnter={this.showProfBtn} onMouseLeave={this.showProfBtn}>
+          <img src={photoURL} alt='UserPhoto' className='userImg'></img>
+          <div className='name'>{name}<span>{xButton}</span></div>
+          <div className='title'>{title}</div>
+          <div className='location'>{location}</div>
+          <div className='email'>{email}</div>
+          <div className='website'>{website}</div>
+          <div className='profileTitle'>PROFILE</div>
+          <div className='profileInfo'>{profileInfo}</div>
+        </div>
+        <Skillsforms />
+
       </div>
     );
   }
