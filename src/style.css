@@ -20,7 +20,8 @@ div {
 }
 
 .profileBtn {
-    margin-left: 20px;
+    position: absolute;
+    margin-left: 45px;
     outline: none;
 }
 
@@ -203,4 +204,49 @@ input {
     margin-bottom: 50px;
     font-family: 'Nunito Sans';
 
+}
+
+.skilllist {
+    font-family: 'Nunito Sans';
+    font-family: 11px;
+    font-weight: 400;
+    padding: 10px 0px;
+
+}
+
+.skill--container {
+    margin-left: 30px;
+}
+
+.relative {
+    position: relative;
+}
+
+.skillbtn {
+    position: absolute;
+    top: 3px;
+}
+
+.skills--forms {
+    position: relative;
+    z-index: 1;
+}
+
+.btnskl {
+    position: absolute;
+    margin-left: 140px;
+}
+
+.xbtn {
+    padding: 10px;
+    padding-bottom: 0px;
+    align-self: flex-end;
+}
+
+.ximg {
+    content: url(https://www.svgrepo.com/show/66823/close.svg);
+    width: 10px;
+    height: 10px;
+    border: none;
+    padding: 5px;
 }
